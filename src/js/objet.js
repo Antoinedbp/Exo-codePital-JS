@@ -1,8 +1,9 @@
-import {checkLink, f12, saveOn, ventoline, marcus, optimus, sangoku, darthvader, semicolon, ctrl} from "./instances.js";
+import {checkLink, f12, saveOn, ventoline, marcus, optimus, sangoku, darthvader, semicolon, ctrl, pharmacie} from "./instances.js";
 import {salleAttente} from "./instances.js";
 
 let docteur = {
     nom : "Dr Debug",
+    img : "👨‍⚕️",
     argent : 1000,
     salleAttente : {
         nom : "Salle d'attente",
@@ -19,7 +20,7 @@ let docteur = {
             case "unsave":
                 malade.traitement = saveOn;
                 break;
-            case "404":
+            case "error404":
                 malade.traitement = checkLink;
                 break;
             case "asmathique":
@@ -31,18 +32,19 @@ let docteur = {
             default:
                 break;
         }
-        console.log(`${malade.nom} est malade.. Il est victime de ${malade.maladie}, il va devoir suivre le traitement suivant : ${malade.traitement.traitement}`);   
+        console.log(`${malade.nom} est malade..😷 Il est victime de ${malade.maladie}.`); 
     },
     patientIn (malade) {
         this.cabinet.push(malade);
         salleAttente.personnes.splice(salleAttente.personnes[salleAttente.personnes.indexOf(malade.nom)], 1);
         malade.etat = "En traitement";
-        console.log(`${malade.nom} rentre dans le cabinet du Dr Debug !`);
+        console.log(`${malade.nom} rentre dans le cabinet du ${docteur.nom} ${docteur.img} !`);
     },
     patientOut (malade) {
         salleAttente.personnes.push(malade);
         this.cabinet.splice(this.cabinet.indexOf(malade));
-        console.log(`${malade.nom} resort du cabinet du Dr Debug !`);
+        console.log(`${docteur.nom} ${docteur.img} lui préconise de suivre le traitement 🔌 suivant : ${malade.traitement.traitement}`);
+        console.log(`${malade.nom} resort du cabinet du ${docteur.nom} ${docteur.img} pour se rendre à la ${pharmacie.nom} ${pharmacie.img}!`);
     }
 }
 

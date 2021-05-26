@@ -8,12 +8,12 @@ class Patients{
         this.etatSante = etatSante;
         this.goTo = (arrivee) => {
             arrivee.personnes.push(salleAttente.personnes);
-            console.log(`${this.nom} est arrivé à la ${arrivee.nom}`);
+            console.log(`${this.nom} est arrivé à la ${arrivee.nom} ${arrivee.img}`);
         }
         this.takeCare = (docteur) => {
             this.argent -= 50;
             docteur.argent += 50;
-            console.log(`${this.nom} effectue un versement de 50$ au ${docteur.nom}`);
+            console.log(`${this.nom} effectue un versement de 50$ 💰 au ${docteur.nom} ${docteur.img}`);
         }
         this.paye = (personneAchat) => {
             this.argent -= this.traitement.prix;
@@ -23,7 +23,8 @@ class Patients{
 }
 
 class Lieux{
-    constructor(nom, personnes){
+    constructor(img, nom, personnes){
+        this.img = img;
         this.nom = nom;
         this.personnes = personnes;
     }

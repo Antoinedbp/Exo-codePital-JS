@@ -3,16 +3,16 @@ import {Patients, Lieux, Traitements} from "./classes.js";
 // Instances des Patients
 let marcus = new Patients("Marcus", "mal indenté", 100, [], "malade");
 let optimus = new Patients("Optimus", "unsave", 200, [], "malade");
-let sangoku = new Patients("Sangoku", "404", 80, [], "malade");
+let sangoku = new Patients("Sangoku", "error404", 80, [], "malade");
 let darthvader = new Patients("DarthVader", "asmathique", 110, [], "malade");
 let semicolon = new Patients("Semicolon", "syntaxError", 60, [], "malade");
 let patients = [marcus, optimus, sangoku, darthvader, semicolon];
 
 
 // Instances des Lieux
-let pharmacie = new Lieux("pharmacie", []);
-let cimetiere = new Lieux("cimetière", []);
-let salleAttente = new Lieux("salle d'attente", []);
+let pharmacie = new Lieux("🏥", "pharmacie", []);
+let cimetiere = new Lieux("⚰️", "cimetière", []);
+let salleAttente = new Lieux("🪑", "salle d'attente", []);
 
 
 // Instances des Traitements

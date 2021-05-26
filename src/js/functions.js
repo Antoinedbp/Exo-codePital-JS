@@ -13,14 +13,22 @@ pharmacie.venteTraitement = (malade) => {
         malade.etat = "mort";
         cimetiere.personnes.push(malade);
         pharmacie.personnes.splice(pharmacie.personnes.indexOf(malade));
-        console.log(`${malade.nom} n'avais malheureusement plus assez de ressources financières.. Il est donc décédé des suites de sa maladie et a été redirigier vers le cimetière.`);
+        console.log(`${malade.nom} n'avais malheureusement plus assez de ressources financières.. Il est donc décédé des suites de sa maladie et repose au ${cimetiere.nom} ${cimetiere.img}.`);
     }
+}
+
+// Chat qui miaule
+let chat = () => {
+    console.log(`Miauwwww`);
 }
 
 let storyTelling = () => {
     let i = 5;
     patients.forEach(elem => {
-        console.log(`Il y a ${i} personnes dans la ${salleAttente.nom}`);
+
+        
+        console.log(`Il y a ${i} personnes dans la ${salleAttente.nom} ${salleAttente.img}`);
+        console.log(`Voici l'aventure 🚀 de ${elem.nom} chez son medecin traitant ${docteur.nom} ${docteur.img}.`);
         
         docteur.patientIn(elem);
         docteur.diagnostique(elem);
